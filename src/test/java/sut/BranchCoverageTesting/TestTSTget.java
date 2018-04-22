@@ -1,4 +1,4 @@
-package sut;
+package BranchCoverageTesting;
 
 import static org.junit.Assert.*;
 
@@ -6,7 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.Test;
 
-//TODO> ask, is this a good idea?
+import sut.TST;
+
 /**
  * DONE: Line and Branch Cover
  * @author fc45701
@@ -14,7 +15,6 @@ import org.junit.Test;
  */
 public class TestTSTget {
 	
-	//TODO -> duvido que seja boa pratica fazer assim
 	@Test
 	public void testWithNullArgument() {
 		String input = null;
@@ -23,7 +23,6 @@ public class TestTSTget {
 	    });	
 	}
 	
-	//TODO -> duvido que seja boa pratica fazer assim
 	@Test
 	public void testWithLenghtZero() {
 		String input = "";
@@ -32,14 +31,12 @@ public class TestTSTget {
 		});	
 	}
 	
-	//TODO -> duvido que seja boa pratica fazer assim
 	@Test
 	public void testWithGetNull() {
 		String input = "test";
 		assertNull(new TST<String>().get(input));
 	}
 	
-	//TODO -> change name maybe?
 	@Test
 	public void testGet() {
 		TST<Integer> tst = new TST<Integer>();
