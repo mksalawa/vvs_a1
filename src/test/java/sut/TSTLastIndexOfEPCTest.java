@@ -10,7 +10,7 @@ public class TSTLastIndexOfEPCTest {
 
     private TST<Integer> tree;
     private String MULTIPLE_MS_KEY = "mmmmmmmmmm";
-    private final String MULTIPLE_MS_KEY_SINGLE_CHAR = MULTIPLE_MS_KEY.substring(0, 1);
+    private final String SINGLE_M_KEY = MULTIPLE_MS_KEY.substring(0, 1);
     private final String HIGHER_CHAR = "p";
     private final String LOWER_CHAR = "k";
 
@@ -70,7 +70,7 @@ public class TSTLastIndexOfEPCTest {
     public void testMiddleChildNoValueAndReturn() {
         tree.put(MULTIPLE_MS_KEY, 5);
 
-        assertEquals("", tree.longestPrefixOf(MULTIPLE_MS_KEY_SINGLE_CHAR));
+        assertEquals("", tree.longestPrefixOf(SINGLE_M_KEY));
     }
 
     /**
@@ -94,9 +94,9 @@ public class TSTLastIndexOfEPCTest {
     @Test
     public void testMiddleChildMatchLeftAndReturn() {
         tree.put(MULTIPLE_MS_KEY, 5);
-        tree.put(MULTIPLE_MS_KEY_SINGLE_CHAR, 4);
-        String query = MULTIPLE_MS_KEY_SINGLE_CHAR + LOWER_CHAR;
+        tree.put(SINGLE_M_KEY, 4);
+        String query = SINGLE_M_KEY + LOWER_CHAR;
 
-        assertEquals(MULTIPLE_MS_KEY_SINGLE_CHAR, tree.longestPrefixOf(query));
+        assertEquals(SINGLE_M_KEY, tree.longestPrefixOf(query));
     }
 }
