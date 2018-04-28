@@ -1,4 +1,4 @@
-package BranchCoverageTesting;
+package sut.BranchCoverageTesting;
 
 import static org.junit.Assert.*;
 
@@ -9,11 +9,10 @@ import org.junit.Test;
 import sut.TST;
 
 /**
- * DONE: Line and Branch Cover
  * @author fc45701
  *
  */
-public class TestTSTget {
+public class TSTgetTest {
 	
 	@Test
 	public void testWithNullArgument() {

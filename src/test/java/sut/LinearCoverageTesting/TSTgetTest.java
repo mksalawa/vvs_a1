@@ -1,4 +1,4 @@
-package LinearCoverageTesting;
+package sut.LinearCoverageTesting;
 
 import static org.junit.Assert.*;
 
@@ -14,7 +14,7 @@ import sut.TST;
  * @author fc45701
  *
  */
-public class TestTSTget {
+public class TSTgetTest {
 	
 	//TODO -> duvido que seja boa pratica fazer assim
 	@Test

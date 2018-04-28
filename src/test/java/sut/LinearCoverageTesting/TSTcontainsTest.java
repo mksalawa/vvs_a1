@@ -1,4 +1,4 @@
-package LinearCoverageTesting;
+package sut.LinearCoverageTesting;
 
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -12,7 +12,7 @@ import sut.TST;
  * @author fc45701
  *
  */
-public class TestTSTcontains {
+public class TSTcontainsTest {
 	
 	@Test
 	public void testWithNullArgument() {

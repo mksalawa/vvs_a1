@@ -1,15 +1,12 @@
-package LinearCoverageTesting;
+package sut.LinearCoverageTesting;
 
 import static org.junit.Assert.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import org.junit.Test;
 
 import sut.TST;
 
-public class TestTSTkeysThatMatch {
+public class TSTkeysThatMatchTest {
 
 	@Test
 	public void testWithNull() {

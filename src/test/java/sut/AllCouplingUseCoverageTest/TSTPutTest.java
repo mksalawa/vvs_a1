@@ -1,4 +1,4 @@
-package AllCouplingUseCoverageTest;
+package sut.AllCouplingUseCoverageTest;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -25,7 +25,7 @@ public class TSTPutTest {
 		 assertEquals("Object should update value",val,tree.get(input));
 	 }
 	 
-	 
+	 //TODO -> assert the val before the actual assertion
 	 //DONE???
 	 //	[0,2,3,0,2,4,6,8]
 	 @Test
@@ -34,6 +34,7 @@ public class TSTPutTest {
 		 Integer val = 5;
 		 tree.put("c", val); //insert root
 		 tree.put(input, val - 1); //insert left
+		 assertEquals(new Integer(val - 1),tree.get(input)); //verify the value is there
 		 tree.put(input,val); //change the value
 		 assertEquals("Object should update value",val,tree.get(input));
 	 }
@@ -44,8 +45,9 @@ public class TSTPutTest {
 	 public void testWithValueOnRight(){
 		 String input = "d";
 		 Integer val = 5;
-		 tree.put("c", val); //insert root
+		 tree.put("c", val-2); //insert root
 		 tree.put(input, val - 1); //insert right
+		 assertEquals(new Integer(val - 1),tree.get(input)); //verify the value is there
 		 tree.put(input,val); // actual test
 		 assertEquals("Object should update value",val,tree.get(input));
 	 }

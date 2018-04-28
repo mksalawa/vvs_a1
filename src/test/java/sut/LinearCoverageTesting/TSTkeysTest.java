@@ -1,8 +1,6 @@
-package LinearCoverageTesting;
+package sut.LinearCoverageTesting;
 
 import static org.junit.Assert.*;
-
-import java.util.ArrayList;
 
 import org.junit.Test;
 
@@ -13,7 +11,7 @@ import sut.TST;
  * @author fc45701
  *
  */
-public class TestTSTkeys {
+public class TSTkeysTest {
 
 	@Test
 	public void testWithEmptyObject() {

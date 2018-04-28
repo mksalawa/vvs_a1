@@ -174,7 +174,7 @@ public class TST<T> {
                 }
                 x = x.mid;
             }
-        }
+        }  
         return query.substring(0, length);
     }
 

@@ -1,10 +1,7 @@
-package LinearCoverageTesting;
+package sut.LinearCoverageTesting;
 
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import org.junit.Test;
 
@@ -15,7 +12,7 @@ import sut.TST;
  * @author fc45701
  *
  */
-public class TestTSTkeysWithPrefix {
+public class TSTkeysWithPrefixTest {
 
 	@Test
 	public void testWithNullArgument() {

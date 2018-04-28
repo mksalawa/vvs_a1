@@ -1,4 +1,4 @@
-package LinearCoverageTesting;
+package sut.LinearCoverageTesting;
 
 import static org.junit.Assert.*;
 
@@ -11,7 +11,7 @@ import sut.TST;
  * @author fc45701
  *
  */
-public class TestTSTsize {
+public class TSTsizeTest {
 
 	@Test
 	public void testEmptySize() {
