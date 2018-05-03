@@ -1,4 +1,4 @@
-package sut.LinearCoverageTesting;
+package sut.BranchAndLinearCoverageTesting;
 
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -24,8 +24,9 @@ public class TSTkeysWithPrefixTest {
 	@Test
 	public void testWithNoRoot() {
 		String input = "test";
-		assertEquals("No root means length zero",0,
-				new TST<Integer>().keysWithPrefix(input).spliterator().getExactSizeIfKnown());
+		long size = new TST<Integer>().keysWithPrefix(input).spliterator()
+				.getExactSizeIfKnown();
+		assertEquals("No root means length zero",0,size);
 	}
 	
 	@Test
@@ -45,7 +46,6 @@ public class TSTkeysWithPrefixTest {
 		tst.put(input, null);
 		long size = tst.keysWithPrefix(input).spliterator()
 				.getExactSizeIfKnown();
-	
 		assertEquals("Only root with null val means size 0",0,size);
 	}
 

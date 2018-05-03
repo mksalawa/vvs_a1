@@ -1,4 +1,4 @@
-package sut.BranchCoverageTesting;
+package sut.BranchAndLinearCoverageTesting;
 
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -27,16 +27,17 @@ public class TSTputTest {
 		Integer val = 4;
 		
 		TST<Integer> tst = new TST<Integer>();
+		tst.put(key, val - 1); //preparation
+		assertEquals(new Integer(val - 1), tst.get(key));
 		tst.put(key, val);
-		
-		assertTrue("Contains root",tst.contains(key));
+		assertTrue("Value changed ",tst.get(key) == val);
 	}
 	@Test
 	public void testWithNotContained() {
 		String key = "test";
 		
 		TST<Integer> tst = new TST<Integer>();
-		
-		assertFalse("Does not contain root",tst.contains(key));
+		tst.put(key,1);
+		assertTrue("Does contain root",tst.contains(key));
 	}
 }

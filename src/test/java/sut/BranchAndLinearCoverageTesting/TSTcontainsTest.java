@@ -1,4 +1,4 @@
-package sut.LinearCoverageTesting;
+package sut.BranchAndLinearCoverageTesting;
 
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -25,7 +25,7 @@ public class TSTcontainsTest {
 	@Test
 	public void testContains() {
 		TST<Integer> tst = new TST<Integer>();
-		String input = "test";
+		String input = "Random";
 		Integer val = 4;
 		tst.put(input, val);
 	    assertTrue("Contains value",tst.contains(input));

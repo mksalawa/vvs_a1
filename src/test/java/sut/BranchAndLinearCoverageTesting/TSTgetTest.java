@@ -1,4 +1,4 @@
-package sut.BranchCoverageTesting;
+package sut.BranchAndLinearCoverageTesting;
 
 import static org.junit.Assert.*;
 

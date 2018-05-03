@@ -1,4 +1,4 @@
-package sut.LinearCoverageTesting;
+package sut.BranchAndLinearCoverageTesting;
 
 import static org.junit.Assert.*;
 
@@ -22,7 +22,7 @@ public class TSTsizeTest {
 	public void testNotEmpty() {
 		TST<Integer> tst = new TST<Integer>();
 		tst.put("val", 1);
-		assertEquals("Empty Size",1,tst.size());
+		assertEquals("Not Empty Size",1,tst.size());
 	}
 
 }
