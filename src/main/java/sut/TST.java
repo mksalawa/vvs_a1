@@ -1,5 +1,7 @@
 package sut;
 
+import javafx.util.Pair;
+
 import java.util.*;
 
 /******************************************************************************
@@ -176,6 +178,27 @@ public class TST<T> {
         return query.substring(0, length);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TST<?> tst = (TST<?>) o;
+
+        return n == tst.n &&
+            Objects.equals(this.getEntrySet(), tst.getEntrySet());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(n, getEntrySet());
+    }
+
+    private Set<Pair<String, T>> getEntrySet() {
+        Set<Pair<String, T>> entries = new HashSet<>();
+        this.keys().forEach(k -> entries.add(new Pair<>(k, this.get(k))));
+        return entries;
+    }
+
     /**
      * Returns all keys in the symbol table as an {@code Iterable}.
      * To iterate over all of the keys in the symbol table named {@code st},
@@ -260,6 +283,20 @@ public class TST<T> {
         }
         if (c == '.' || c > x.c) {
             collect(x.right, prefix, i, pattern, queue);
+        }
+    }
+
+
+    /**
+     * Removes the value associated with the given key from the tree, if the tree contains the key.
+     *
+     * @param key the key to be removed from the TST
+     */
+    public void delete(String key) {
+        T val = this.get(key);
+        if (val != null) {
+            n--;
+            this.put(key, null);
         }
     }
 
