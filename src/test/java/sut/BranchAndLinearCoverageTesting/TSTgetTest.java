@@ -31,7 +31,7 @@ public class TSTgetTest {
 	}
 	
 	@Test
-	public void testWithGetNull() {
+	public void testReturnNullIfKeyNotPresent() {
 		String input = "test";
 		assertNull(new TST<String>().get(input));
 	}

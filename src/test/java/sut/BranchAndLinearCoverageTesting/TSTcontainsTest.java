@@ -16,9 +16,8 @@ public class TSTcontainsTest {
 	
 	@Test
 	public void testWithNullArgument() {
-		String input = null;
 	    assertThrows(IllegalArgumentException.class, () -> {
-	    	new TST<String>().contains(input);
+	    	new TST<String>().contains(null);
 	    });	
 	}
 

@@ -10,7 +10,7 @@ import sut.TST;
 
 /**
  * a = query == null
- * b = query.lenght == 0
+ * b = query.length == 0
  * c = x != null
  * d = i < query.length
  * e = c < x.c
@@ -18,7 +18,6 @@ import sut.TST;
  * g = x.val != null
  * TR(CoC) = {!a,a,!b,b,c&&d,!c&&d,c&&!d,!c&&!d,!e,e,!f,f,!g,g} // 14
  * @author fc45701
- * missing !c && d
  *
  */
 public class longestPrefixOfTest {
@@ -29,16 +28,18 @@ public class longestPrefixOfTest {
 	public void setUp() {
 		tree = new TST<>();
 	}
-	
-	// !a
+	/**
+	 * Covers: !a
+	 */
 	@Test
 	public void testWithNullValue(){
 		assertThrows(IllegalArgumentException.class, () -> {
 			tree.longestPrefixOf(null);
 	    });	
 	 }
-	
-	// a, !b
+	/**
+	 *  Covers: a, !b
+	 */
 	@Test
 	public void testWithLengthZero(){
 		String input = "";
@@ -46,8 +47,9 @@ public class longestPrefixOfTest {
 				tree.longestPrefixOf(input));
 	}
 	
-	
-	//!g,!c&&!d
+	/**
+	 *Covers: !g,!c&&!d 
+	 */
 	@Test
 	public void testWithValueNull(){
 		String input = "c";
@@ -57,8 +59,9 @@ public class longestPrefixOfTest {
 		assertEquals("Longest of string with val null is empty ","",
 				tree.longestPrefixOf(input));
 	}
-	
-	//b, c&&d,c&&!d,e,!e,f,!f,g
+	/*
+	 * Covers: b, c&&d,c&&!d,e,!e,f,!f,g
+	 */
 	@Test
 	public void longestPrefixOfTest1(){
 		String input = "c";
@@ -69,8 +72,9 @@ public class longestPrefixOfTest {
 		assertEquals(val,tree.get(input)); //confirm value is there
 		assertEquals("Longest of string legnth 1 is string itself ",input,tree.longestPrefixOf(input));
 	 }
-	
-	//!c&&d
+	/*
+	 * Covers: !c&&d
+	 */
 	@Test
 	public void longestPrefixOfTest2(){
 		String input = "cc";

@@ -158,7 +158,6 @@ public class TST<T> {
         if (query.length() == 0) {
             return null;
         }
-        
         int length = 0;
         Node<T> x = root;
         int i = 0;
@@ -234,7 +233,6 @@ public class TST<T> {
             queue.add(prefix);
         }
         collect(x.mid, new StringBuilder(prefix), queue);
-        
         return queue;
     }
 
