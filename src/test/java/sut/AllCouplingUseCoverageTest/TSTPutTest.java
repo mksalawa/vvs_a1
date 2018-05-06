@@ -7,7 +7,7 @@ import sut.TST;
 
 import static org.junit.Assert.*;
 
-public class TSTPutTest {
+public class TSTputTest {
 	
 	 private TST<Integer> tree;
 
@@ -22,7 +22,7 @@ public class TSTPutTest {
 	* key -> last-def {0} first-use {0}
 	*/
 	 @Test
-	 public void testWithUpdateValue(){
+	 public void testWithEmptyTree(){
 		 String input = "b";
 		 Integer val = 5;
 		 tree.put(input,val);
