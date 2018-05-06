@@ -23,7 +23,7 @@ public class TSTequalsTest {
 	* (x == 0 ? 1 : 0)
 	*/
 	@Test
-	public void testNull() {
+	public void testWithArgNull() {
 		assertFalse(trie.equals(null));
 	}
 	
