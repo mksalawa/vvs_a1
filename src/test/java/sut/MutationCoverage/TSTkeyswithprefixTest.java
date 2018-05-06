@@ -10,7 +10,7 @@ import sut.TST;
 /**
  * Kills the mutants present in keysWithPrefix
  */
-public class TSTkeyswithprefixTest {
+public class TSTkeysWithPrefixTest {
 	private TST<Integer> trie;
 	
 	@Before

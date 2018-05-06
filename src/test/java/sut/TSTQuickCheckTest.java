@@ -10,6 +10,7 @@ import org.junit.runner.RunWith;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -40,7 +41,7 @@ public class TSTQuickCheckTest {
      */
     @Property
     public void testRemoveAllKeys(@From(TSTWithIntValGenerator.class) TST<Integer> tst) {
-        getKeyList(tst).forEach(k -> tst.delete(k));
+        getKeyList(tst).forEach(tst::delete);
 
         assertEquals("After removing all keys, TST should be empty.", tst.size(), 0);
     }
@@ -68,24 +69,26 @@ public class TSTQuickCheckTest {
      * 4. Selecting a stricter prefix, keysWithPrefix() returns a strict subset result.
      *    E.g. keysWithPrefix("sub") ⊆ keysWithPrefix("su")
      */
-    
     @Property
-    public void stricterPrefixTest(@From(TSTWithIntValGenerator.class) TST<Integer> tst,
+    public void testStricterPrefix(@From(TSTWithIntValGenerator.class) TST<Integer> tst,
                                    @From(StringKeyGenerator.class) String key) {
         assumeTrue(key.length() > 1);
 
         List<String> keys = new ArrayList<>();
         tst.keysWithPrefix(key).forEach(keys::add);
 
-        String stricterKey = key.substring(0, key.length() - 1);
-        List<String> stricterKeys = new ArrayList<>();
-        tst.keysWithPrefix(stricterKey).forEach(stricterKeys::add);
-        
-        //assertTrue("Selecting a stricter prefix should return a strict subset result.",
-        //   keys.containsAll(stricterKeys));
+        // prefixLength in [1, key.length() - 1], so that both are non-empty
+        int prefixLength = new Random().nextInt(key.length() - 1) + 1;
+        String subKey = key.substring(0, prefixLength);
+        List<String> keysWithSubKeyPrefix = new ArrayList<>();
+        tst.keysWithPrefix(subKey).forEach(keysWithSubKeyPrefix::add);
+
+        // keysWithPrefix(key) ⊆ keysWithPrefix(subKey)
+        assertTrue("Selecting a stricter prefix should return a strict subset result.",
+            keysWithSubKeyPrefix.containsAll(keys));
     }
-	
-    private List<String> getKeyList(@From(TSTWithIntValGenerator.class) TST<Integer> tst) {
+
+    private List<String> getKeyList(TST<Integer> tst) {
         List<String> keys = new ArrayList<>();
         tst.keys().forEach(keys::add);
         return keys;

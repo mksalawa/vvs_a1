@@ -17,7 +17,6 @@ import sut.TST;
  * f = c > x.c
  * g = x.val != null
  * TR(CoC) = {!a,a,!b,b,c&&d,!c&&d,c&&!d,!c&&!d,!e,e,!f,f,!g,g} // 14
- * @author fc45701
  *
  */
 public class longestPrefixOfTest {

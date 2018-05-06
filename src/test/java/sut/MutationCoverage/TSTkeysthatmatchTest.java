@@ -10,7 +10,7 @@ import sut.TST;
 /**
  * Kills the Mutants present in keysThatMatch
  */
-public class TSTkeysthatmatchTest {
+public class TSTkeysThatMatchTest {
 
 	private TST<Integer> trie;
 	
