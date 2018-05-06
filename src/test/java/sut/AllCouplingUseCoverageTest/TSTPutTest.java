@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package AllCouplingUseCoverageTest;
+=======
+package sut.AllCouplingUseCoverageTest;
+>>>>>>> 5f1a1540358110c51718899b65ca962d50a09e69
 
 import org.junit.Before;
 import org.junit.Test;
@@ -15,8 +19,13 @@ public class TSTPutTest {
 	 public void setUp() {
 		 tree = new TST<>();
 	 }
-	 
-	 //[0,1,2,4,6,8]
+	/**
+	* Test paths:
+	* c -> last-def {0}, first-use {1}
+	* d -> last-def {0} first-use {0}
+	* key -> last-def {0} first-use {0}
+	*/
+>>>>>>> 5f1a1540358110c51718899b65ca962d50a09e69
 	 @Test
 	 public void testWithUpdateValue(){
 		 String input = "b";
@@ -24,42 +33,21 @@ public class TSTPutTest {
 		 tree.put(input,val);
 		 assertEquals("Object should update value",val,tree.get(input));
 	 }
-	 
-	 
-	 //DONE???
-	 //	[0,2,3,0,2,4,6,8]
+
+	 /**
+	 * Test paths
+	 * val -> last-def {0}, first-use {3}
+	 * x -> last-def {(3,5,8)}, first-use {(3,5,8)}
+	 */
 	 @Test
-	 public void testWithValueOnLeft(){
+	 public void testWithValOnTheLeft(){
+>>>>>>> 5f1a1540358110c51718899b65ca962d50a09e69
 		 String input = "b";
 		 Integer val = 5;
 		 tree.put("c", val); //insert root
 		 tree.put(input, val - 1); //insert left
+		 assertEquals(new Integer(val - 1),tree.get(input)); //verify the value is there
 		 tree.put(input,val); //change the value
-		 assertEquals("Object should update value",val,tree.get(input));
-	 }
-	 
-	 //DOUBT: CAN THEY BE DONE LIKE THIS???
-	 //[0,2,4,5,0,2,4,6,8]
-	 @Test
-	 public void testWithValueOnRight(){
-		 String input = "d";
-		 Integer val = 5;
-		 tree.put("c", val); //insert root
-		 tree.put(input, val - 1); //insert right
-		 tree.put(input,val); // actual test
-		 assertEquals("Object should update value",val,tree.get(input));
-	 }
-	
-	 
-	 //[0,2,4,6,7,0,2,4,6,8]
-	 @Test
-	 public void testWithNodeInTheMiddle(){
-		 String input = "dd";
-		 Integer val = 5;
-		 tree.put(input, val); //insert root
-		 tree.put(input, val); //insert middle
-		 //tree.put(input, val - 1); //insert value to change
-		 tree.put(input,val); // actual test
-		 assertEquals("Object should update value",val,tree.get(input));
+		 assertEquals("Object should return expected value",val,tree.get(input));
 	 }
 }
