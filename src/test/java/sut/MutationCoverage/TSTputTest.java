@@ -8,7 +8,7 @@ import org.junit.Test;
 import sut.TST;
 
 public class TSTputTest {
-	private TST<Integer> trie;
+private TST<Integer> trie;
 	
 	@Before
 	public void setUp(){
