@@ -1,8 +1,10 @@
-package sut;
+package LinearCoverageTesting;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import sut.TST;
 
 /**
  * DONE: LINE AND BRANCH COVER

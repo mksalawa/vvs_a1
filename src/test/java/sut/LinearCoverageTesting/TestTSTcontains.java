@@ -1,9 +1,11 @@
-package sut;
+package LinearCoverageTesting;
 
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.Test;
+
+import sut.TST;
 
 /**
  * DONE: Line and Branch Cover
@@ -19,12 +21,11 @@ public class TestTSTcontains {
 	    	new TST<String>().contains(input);
 	    });	
 	}
-	//TODO -> mudar o nome disto nao?
-	//TODO -> a funcao em geral
+
 	@Test
 	public void testContains() {
 		TST<Integer> tst = new TST<Integer>();
-		String input = "Random";
+		String input = "test";
 		Integer val = 4;
 		tst.put(input, val);
 	    assertTrue("Contains value",tst.contains(input));
