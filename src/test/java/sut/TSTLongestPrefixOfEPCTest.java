@@ -6,7 +6,13 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class TSTLastIndexOfEPCTest {
+/**
+ * TSTLongestPrefixOfEPCTest implements tests satisfying Edge-Pair Coverage criterion for method {@code longestPrefixOf}.
+ *
+ * Each test is annotated with the test path it implements, according to the Data Flow Graph that can be found in
+ * the assignment report.
+ */
+public class TSTLongestPrefixOfEPCTest {
 
     private TST<Integer> tree;
     private String MULTIPLE_MS_KEY = "mmmmmmmmmm";
