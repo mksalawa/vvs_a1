@@ -8,12 +8,11 @@ import org.junit.Test;
 
 import sut.TST;
 
-/**
- * @author fc45701
- *
- */
 public class TSTgetTest {
 	
+	/**
+	 * Test Case 1
+	 */
 	@Test
 	public void testWithNullArgument() {
 		String input = null;
@@ -22,6 +21,9 @@ public class TSTgetTest {
 	    });	
 	}
 	
+	/**
+	 * Test Case 2
+	 */
 	@Test
 	public void testWithLenghtZero() {
 		String input = "";
@@ -30,17 +32,23 @@ public class TSTgetTest {
 		});	
 	}
 	
+	/**
+	 * Test Case 3
+	 */
 	@Test
 	public void testReturnNullIfKeyNotPresent() {
 		String input = "test";
 		assertNull(new TST<String>().get(input));
 	}
 	
+	/**
+	 * Test Case 4
+	 */
 	@Test
-	public void testGet() {
+	public void testGetWithValNull() {
 		TST<Integer> tst = new TST<Integer>();
 		String input = "test";
-		Integer val = 4;
+		Integer val = null;
 		tst.put(input, val);
 		assertEquals("getting root value",tst.get(input),val);
 	}

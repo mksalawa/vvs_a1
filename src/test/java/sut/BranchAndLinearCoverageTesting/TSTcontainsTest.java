@@ -7,13 +7,11 @@ import org.junit.Test;
 
 import sut.TST;
 
-/**
- * DONE: Line and Branch Cover
- * @author fc45701
- *
- */
 public class TSTcontainsTest {
 	
+	/**
+	 * Test Case 2
+	 */
 	@Test
 	public void testWithNullArgument() {
 	    assertThrows(IllegalArgumentException.class, () -> {
@@ -21,10 +19,13 @@ public class TSTcontainsTest {
 	    });	
 	}
 
+	/*
+	 * Test Case 4
+	 */
 	@Test
 	public void testContains() {
 		TST<Integer> tst = new TST<Integer>();
-		String input = "Random";
+		String input = "test";
 		Integer val = 4;
 		tst.put(input, val);
 	    assertTrue("Contains value",tst.contains(input));

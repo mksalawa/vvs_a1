@@ -32,7 +32,7 @@ public class longestPrefixOfTest {
 	 * Covers: !a
 	 */
 	@Test
-	public void testWithNullValue(){
+	public void testWithNullArgument(){
 		assertThrows(IllegalArgumentException.class, () -> {
 			tree.longestPrefixOf(null);
 	    });	

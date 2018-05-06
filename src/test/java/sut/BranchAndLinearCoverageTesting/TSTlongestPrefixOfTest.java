@@ -7,20 +7,20 @@ import org.junit.Test;
 
 import sut.TST;
 
-/**
- * DONE: BRANCHED AND LINEAR
- * @author fc45701
- *
- */
 public class TSTlongestPrefixOfTest {
+	/**
+	* Test Case 1
+	*/
 	@Test
 	public void testWithQueryNull() {
-		String query = null;
 	    assertThrows(IllegalArgumentException.class, () -> {
-	    	new TST<String>().longestPrefixOf(query);
+	    	new TST<String>().longestPrefixOf(null);
 	    });	
 	}
 	
+	/**
+	 * Test Case 2
+	 */
 	@Test
 	public void testWithQueryLenghtZero() {
 		String query = "";
@@ -28,6 +28,9 @@ public class TSTlongestPrefixOfTest {
 				new TST<String>().longestPrefixOf(query));
 	}
 	
+	/**
+	 *  Test Case 9
+	 */
 	@Test
 	public void testLongestPrefixOf1() {
 		String query = "d";
@@ -38,6 +41,9 @@ public class TSTlongestPrefixOfTest {
 		String res = tst.longestPrefixOf(query);
 		assertEquals(query, res );
 	}
+	/**
+	 * Test Case 10
+	 */
 	@Test
 	public void testLongestPrefixOf2() {
 		String query = "e";
@@ -46,4 +52,5 @@ public class TSTlongestPrefixOfTest {
 		String res = tst.longestPrefixOf(query);
 		assertNotEquals(query, res );
 	}
+	
 }

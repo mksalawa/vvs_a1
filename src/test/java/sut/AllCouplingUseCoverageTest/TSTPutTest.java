@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-package AllCouplingUseCoverageTest;
-=======
 package sut.AllCouplingUseCoverageTest;
->>>>>>> 5f1a1540358110c51718899b65ca962d50a09e69
 
 import org.junit.Before;
 import org.junit.Test;
@@ -25,7 +21,6 @@ public class TSTPutTest {
 	* d -> last-def {0} first-use {0}
 	* key -> last-def {0} first-use {0}
 	*/
->>>>>>> 5f1a1540358110c51718899b65ca962d50a09e69
 	 @Test
 	 public void testWithUpdateValue(){
 		 String input = "b";
@@ -33,7 +28,6 @@ public class TSTPutTest {
 		 tree.put(input,val);
 		 assertEquals("Object should update value",val,tree.get(input));
 	 }
-
 	 /**
 	 * Test paths
 	 * val -> last-def {0}, first-use {3}
@@ -41,7 +35,6 @@ public class TSTPutTest {
 	 */
 	 @Test
 	 public void testWithValOnTheLeft(){
->>>>>>> 5f1a1540358110c51718899b65ca962d50a09e69
 		 String input = "b";
 		 Integer val = 5;
 		 tree.put("c", val); //insert root
@@ -50,4 +43,5 @@ public class TSTPutTest {
 		 tree.put(input,val); //change the value
 		 assertEquals("Object should return expected value",val,tree.get(input));
 	 }
+	 
 }

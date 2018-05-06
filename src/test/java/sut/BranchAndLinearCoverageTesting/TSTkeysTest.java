@@ -6,13 +6,11 @@ import org.junit.Test;
 
 import sut.TST;
 
-/**
- * 
- * @author fc45701
- *
- */
 public class TSTkeysTest {
 
+	/*
+	 * Test Case 0
+	 */
 	@Test
 	public void testWithEmptyObject() {
 		TST<Integer> tst = new TST<Integer>();

@@ -7,13 +7,11 @@ import org.junit.Test;
 
 import sut.TST;
 
-/**
- * DONE: LINE AND BRANCH
- * @author fc45701
- *
- */
 public class TSTputTest {
 
+	/**
+	 * Test Case 6
+	 */
 	@Test
 	public void testWithKeyNull() {
 		assertThrows(IllegalArgumentException.class, () -> {
@@ -21,6 +19,9 @@ public class TSTputTest {
 		});	
 	}
 
+	/**
+	 * Test Case 7 -> where we need it to contain it before put
+	 */
 	@Test
 	public void testWithContained() {
 		String key = "test";
@@ -32,6 +33,10 @@ public class TSTputTest {
 		tst.put(key, val);
 		assertTrue("Value changed ",tst.get(key) == val);
 	}
+	
+	/**
+	 * Test Case 8
+	 */
 	@Test
 	public void testWithNotContained() {
 		String key = "test";

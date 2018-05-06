@@ -7,14 +7,20 @@ import org.junit.Test;
 
 import sut.TST;
 
+/**
+ * Kills the mutants present in keysWithPrefix
+ */
 public class TSTkeyswithprefixTest {
-private TST<Integer> trie;
+	private TST<Integer> trie;
 	
 	@Before
 	public void setUp(){
 		trie = new TST<Integer>();
 	}
 	
+	/*
+	 * Kills the mutant that removes the call to the sut/TST::collect
+	 */ 
 	@Test
 	public void testWithMidElement() {
 		String input = "c";
