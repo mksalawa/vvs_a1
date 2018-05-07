@@ -9,21 +9,19 @@ import sut.TST;
 
 public class TSTkeysThatMatchTest {
 
-	private TST<Integer> trie;
+    private TST<Integer> trie;
 
-	@Before
-	public void setUp() {
-		trie = new TST<>();
-	}
-	
-	/**
-	* Test Case 1
-	*/
-	@Test
-	public void testWithNull() {
-		long size = trie.keysThatMatch(null).spliterator()
-				.getExactSizeIfKnown();
-		assertEquals(0,size);
-	}
+    @Before
+    public void setUp() {
+        trie = new TST<>();
+    }
 
+    /**
+     * Test Case 1
+     */
+    @Test
+    public void testWithNull() {
+        long size = trie.keysThatMatch(null).spliterator().getExactSizeIfKnown();
+        assertEquals(0, size);
+    }
 }

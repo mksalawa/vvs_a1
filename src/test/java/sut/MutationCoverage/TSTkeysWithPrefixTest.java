@@ -11,21 +11,21 @@ import sut.TST;
  * Kills the mutants present in keysWithPrefix
  */
 public class TSTkeysWithPrefixTest {
-	private TST<Integer> trie;
-	
-	@Before
-	public void setUp(){
-		trie = new TST<Integer>();
-	}
-	
-	/*
-	 * Kills the mutant that removes the call to the sut/TST::collect
-	 */ 
-	@Test
-	public void testWithMidElement() {
-		String input = "c";
-		Integer val = 5;
-		trie.put("cc",val - 1);
-		assertTrue(trie.keysWithPrefix(input).spliterator().getExactSizeIfKnown() == 1);
-	}
+    private TST<Integer> trie;
+
+    @Before
+    public void setUp() {
+        trie = new TST<>();
+    }
+
+    /**
+     * Kills the mutant that removes the call to the sut/TST::collect
+     */
+    @Test
+    public void testWithMidElement() {
+        String input = "c";
+        Integer val = 5;
+        trie.put("cc", val - 1);
+        assertTrue(trie.keysWithPrefix(input).spliterator().getExactSizeIfKnown() == 1);
+    }
 }
