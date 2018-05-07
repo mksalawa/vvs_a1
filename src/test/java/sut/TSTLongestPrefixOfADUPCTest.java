@@ -7,7 +7,13 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class TSTLastIndexOfADUPCTest {
+/**
+ * TSTLongestPrefixOfADUPCTest implements tests satisfying All-DU-Paths Coverage criterion for method {@code longestPrefixOf}.
+ *
+ * Each test is annotated with the test path it implements, according to the Data Flow Graph that can be found in
+ * the assignment report.
+ */
+public class TSTLongestPrefixOfADUPCTest {
 
     private TST<Integer> tree;
     private String MULTIPLE_MS_KEY = "mmmmmmmmmm";

@@ -18,6 +18,9 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assume.assumeFalse;
 import static org.junit.Assume.assumeTrue;
 
+/**
+ * TSTQuickCheckTest implements tests of the properties of the {@link TST}.
+ */
 @RunWith(JUnitQuickcheck.class)
 public class TSTQuickCheckTest {
 
