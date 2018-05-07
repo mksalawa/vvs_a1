@@ -9,20 +9,18 @@ import sut.TST;
 
 public class TSTsizeTest {
 
-	private TST<Integer> trie;
+    private TST<Integer> trie;
 
-	@Before
-	public void setUp() {
-		trie = new TST<>();
-	}
-	
-	/**
-	 * Test Case 0
-	 */
-	@Test
-	public void testWithEmptySize() {
-		assertEquals("Empty Size",0,trie.size());
-	}
-	
+    @Before
+    public void setUp() {
+        trie = new TST<>();
+    }
 
+    /**
+     * Test Case 0
+     */
+    @Test
+    public void testWithEmptySize() {
+        assertEquals("Empty Size", 0, trie.size());
+    }
 }
