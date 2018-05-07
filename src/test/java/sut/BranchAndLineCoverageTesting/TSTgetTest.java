@@ -1,23 +1,30 @@
-package sut.BranchAndLinearCoverageTesting;
+package sut.BranchAndLineCoverageTesting;
 
 import static org.junit.Assert.*;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import sut.TST;
 
 public class TSTgetTest {
 	
+	private TST<Integer> trie;
+
+	@Before
+	public void setUp() {
+		trie = new TST<>();
+	}
+	
 	/**
 	 * Test Case 1
 	 */
 	@Test
 	public void testWithNullArgument() {
-		String input = null;
 	    assertThrows(IllegalArgumentException.class, () -> {
-	    	new TST<String>().get(input);
+	    	trie.get(null);
 	    });	
 	}
 	
@@ -26,9 +33,8 @@ public class TSTgetTest {
 	 */
 	@Test
 	public void testWithLenghtZero() {
-		String input = "";
 		assertThrows(IllegalArgumentException.class, () -> {
-		    new TST<String>().get(input);
+		    trie.get("");
 		});	
 	}
 	
@@ -36,20 +42,18 @@ public class TSTgetTest {
 	 * Test Case 3
 	 */
 	@Test
-	public void testReturnNullIfKeyNotPresent() {
+	public void testWithKeyNotPresent() {
 		String input = "test";
-		assertNull(new TST<String>().get(input));
+		assertNull(trie.get(input));
 	}
 	
 	/**
 	 * Test Case 4
 	 */
 	@Test
-	public void testGetWithValNull() {
-		TST<Integer> tst = new TST<Integer>();
+	public void testWithValNull() {
 		String input = "test";
-		Integer val = null;
-		tst.put(input, val);
-		assertEquals("getting root value",tst.get(input),val);
+		trie.put(input, null);
+		assertEquals("getting root value",trie.get(input), null);
 	}
 }

@@ -18,12 +18,13 @@ public class TSTkeysThatMatchTest {
 	public void setUp(){
 		trie = new TST<Integer>();
 	}
+	
 	/*
 	* Kills the mutants that changed conditional boundary and
 	* replaces indice subtraction with addition
 	*/
 	@Test
-	public void testWithSmallerInput() {
+	public void testWithSmallestInput() {
 		String input = "c";
 		Integer val = 5;
 		trie.put(input + input + input,val - 2);

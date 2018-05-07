@@ -19,7 +19,7 @@ import sut.TST;
  * TR(CoC) = {!a,a,!b,b,c&&d,!c&&d,c&&!d,!c&&!d,!e,e,!f,f,!g,g} // 14
  *
  */
-public class longestPrefixOfTest {
+public class TSTlongestPrefixOfTest {
 	
 	private TST<Integer> tree;
 
@@ -41,9 +41,8 @@ public class longestPrefixOfTest {
 	 */
 	@Test
 	public void testWithLengthZero(){
-		String input = "";
 		assertEquals("Input of length zero gives null result ",null,
-				tree.longestPrefixOf(input));
+				tree.longestPrefixOf(""));
 	}
 	
 	/**
@@ -62,7 +61,7 @@ public class longestPrefixOfTest {
 	 * Covers: b, c&&d,c&&!d,e,!e,f,!f,g
 	 */
 	@Test
-	public void longestPrefixOfTest1(){
+	public void testWithTwoValuesOnTheLeft(){
 		String input = "c";
 		Integer val = 5;
 		tree.put("d", val); //insert root
@@ -75,7 +74,7 @@ public class longestPrefixOfTest {
 	 * Covers: !c&&d
 	 */
 	@Test
-	public void longestPrefixOfTest2(){
+	public void testWithNoPrefix(){
 		String input = "cc";
 		Integer val = 5;
 		tree.put("b", val); //insert left

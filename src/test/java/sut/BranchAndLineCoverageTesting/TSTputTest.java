@@ -1,21 +1,29 @@
-package sut.BranchAndLinearCoverageTesting;
+package sut.BranchAndLineCoverageTesting;
 
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import sut.TST;
 
 public class TSTputTest {
 
+	private TST<Integer> trie;
+
+	@Before
+	public void setUp() {
+		trie = new TST<>();
+	}
+	
 	/**
 	 * Test Case 6
 	 */
 	@Test
 	public void testWithKeyNull() {
 		assertThrows(IllegalArgumentException.class, () -> {
-			new TST<Integer>().put(null, 4);
+			trie.put(null, 4);
 		});	
 	}
 
@@ -27,11 +35,10 @@ public class TSTputTest {
 		String key = "test";
 		Integer val = 4;
 		
-		TST<Integer> tst = new TST<Integer>();
-		tst.put(key, val - 1); //preparation
-		assertEquals(new Integer(val - 1), tst.get(key));
-		tst.put(key, val);
-		assertTrue("Value changed ",tst.get(key) == val);
+		trie.put(key, val - 1); //preparation
+		assertEquals(new Integer(val - 1), trie.get(key));
+		trie.put(key, val);
+		assertTrue("Value changed ",trie.get(key) == val);
 	}
 	
 	/**
@@ -41,8 +48,7 @@ public class TSTputTest {
 	public void testWithNotContained() {
 		String key = "test";
 		
-		TST<Integer> tst = new TST<Integer>();
-		tst.put(key,1);
-		assertTrue("Does contain root",tst.contains(key));
+		trie.put(key,1);
+		assertTrue("Does contain root",trie.contains(key));
 	}
 }

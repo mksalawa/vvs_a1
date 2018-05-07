@@ -12,7 +12,7 @@ private TST<Integer> trie;
 	
 	@Before
 	public void setUp(){
-		trie = new TST<Integer>();
+		trie = new TST<>();
 	}
 	
 	/*

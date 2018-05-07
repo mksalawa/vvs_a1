@@ -1,13 +1,21 @@
-package sut.BranchAndLinearCoverageTesting;
+package sut.BranchAndLineCoverageTesting;
 
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import sut.TST;
 
 public class TSTcontainsTest {
+	
+	private TST<Integer> trie;
+
+	@Before
+	public void setUp() {
+		trie = new TST<>();
+	}
 	
 	/**
 	 * Test Case 2
@@ -15,20 +23,19 @@ public class TSTcontainsTest {
 	@Test
 	public void testWithNullArgument() {
 	    assertThrows(IllegalArgumentException.class, () -> {
-	    	new TST<String>().contains(null);
+	    	trie.contains(null);
 	    });	
 	}
 
-	/*
+	/**
 	 * Test Case 4
 	 */
 	@Test
-	public void testContains() {
-		TST<Integer> tst = new TST<Integer>();
+	public void testContainsWithSingleValue() {
 		String input = "test";
 		Integer val = 4;
-		tst.put(input, val);
-	    assertTrue("Contains value",tst.contains(input));
+		trie.put(input, val);
+	    assertTrue("Contains value",trie.contains(input));
 	}
 
 }
