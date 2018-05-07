@@ -23,9 +23,7 @@ public class TSTgetTest {
      */
     @Test
     public void testWithNullArgument() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            trie.get(null);
-        });
+        assertThrows(IllegalArgumentException.class, () -> trie.get(null));
     }
 
     /**
@@ -33,9 +31,7 @@ public class TSTgetTest {
      */
     @Test
     public void testWithLenghtZero() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            trie.get("");
-        });
+        assertThrows(IllegalArgumentException.class, () -> trie.get(""));
     }
 
     /**
@@ -43,8 +39,7 @@ public class TSTgetTest {
      */
     @Test
     public void testWithKeyNotPresent() {
-        String input = "test";
-        assertNull(trie.get(input));
+        assertNull(trie.get("notPresentKey"));
     }
 
     /**
@@ -54,6 +49,6 @@ public class TSTgetTest {
     public void testWithValNull() {
         String input = "test";
         trie.put(input, null);
-        assertEquals("getting root value", trie.get(input), null);
+        assertNull("getting root value", trie.get(input));
     }
 }

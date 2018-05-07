@@ -31,8 +31,7 @@ public class TSTkeysWithPrefixTest {
     @Test
     public void testWithNoRoot() {
         String input = "test";
-        long size = trie.keysWithPrefix(input).spliterator().getExactSizeIfKnown();
-        assertEquals("No root means length zero", 0, size);
+        assertFalse("Should return empty result if no root.", trie.keysWithPrefix(input).iterator().hasNext());
     }
 
     /**
@@ -43,7 +42,7 @@ public class TSTkeysWithPrefixTest {
         String input = "test";
         trie.put(input, 4);
         long size = trie.keysWithPrefix(input).spliterator().getExactSizeIfKnown();
-        assertEquals("Only root means length 1", 1, size);
+        assertEquals("Only root means size 1", 1, size);
     }
 
     /**
@@ -53,7 +52,6 @@ public class TSTkeysWithPrefixTest {
     public void testWithOnlyRootAndNullVal() {
         String input = "test";
         trie.put(input, null);
-        long size = trie.keysWithPrefix(input).spliterator().getExactSizeIfKnown();
-        assertEquals("Only root with null val means size 0", 0, size);
+        assertFalse("Only root with null val means size 0", trie.keysWithPrefix(input).iterator().hasNext());
     }
 }

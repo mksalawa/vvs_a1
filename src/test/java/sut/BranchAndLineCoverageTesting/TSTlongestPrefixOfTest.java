@@ -30,8 +30,7 @@ public class TSTlongestPrefixOfTest {
      */
     @Test
     public void testWithLenghtZero() {
-        assertNull("Query has length zero",
-            trie.longestPrefixOf(""));
+        assertNull("Query has length zero", trie.longestPrefixOf(""));
     }
 
     /**
