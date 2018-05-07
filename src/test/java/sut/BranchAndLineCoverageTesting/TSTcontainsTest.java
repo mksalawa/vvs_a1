@@ -22,9 +22,7 @@ public class TSTcontainsTest {
      */
     @Test
     public void testWithNullArgument() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            trie.contains(null);
-        });
+        assertThrows(IllegalArgumentException.class, () -> trie.contains(null));
     }
 
     /**

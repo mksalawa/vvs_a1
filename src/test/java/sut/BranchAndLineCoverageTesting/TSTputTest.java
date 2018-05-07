@@ -36,7 +36,7 @@ public class TSTputTest {
         trie.put(key, val - 1); //preparation
         assertEquals(new Integer(val - 1), trie.get(key));
         trie.put(key, val);
-        assertTrue("Value changed ", trie.get(key) == val);
+        assertEquals("Value changed ", trie.get(key), val);
     }
 
     /**

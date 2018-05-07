@@ -1,5 +1,6 @@
 package sut.MutationCoverage;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
@@ -25,6 +26,6 @@ public class TSTputTest {
         trie.put("d", val + 1);
         trie.put(input, val - 1); //preparation
         trie.put(input, val);
-        assertTrue(trie.size() == 2);
+        assertEquals(2, trie.size());
     }
 }

@@ -21,7 +21,7 @@ public class TSTkeysThatMatchTest {
      */
     @Test
     public void testWithNull() {
-        long size = trie.keysThatMatch(null).spliterator().getExactSizeIfKnown();
-        assertEquals(0, size);
+        assertFalse("Should return empty result for null pattern.",
+            trie.keysThatMatch(null).iterator().hasNext());
     }
 }

@@ -1,6 +1,7 @@
 package sut.CombinatorialCoverageTesting;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.Before;
@@ -40,8 +41,7 @@ public class TSTlongestPrefixOfTest {
      */
     @Test
     public void testWithLengthZero() {
-        assertEquals("Input of length zero gives null result ", null,
-            tree.longestPrefixOf(""));
+        assertNull("Input of length zero gives null result ", tree.longestPrefixOf(""));
     }
 
     /**

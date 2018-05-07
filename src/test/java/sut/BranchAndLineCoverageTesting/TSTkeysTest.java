@@ -21,7 +21,6 @@ public class TSTkeysTest {
      */
     @Test
     public void testWithEmptyObject() {
-        assertEquals("Size of empty TST is 0", 0,
-            trie.keys().spliterator().getExactSizeIfKnown());
+        assertFalse("Empty TST has no elements", trie.keys().iterator().hasNext());
     }
 }

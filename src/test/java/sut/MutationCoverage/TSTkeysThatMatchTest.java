@@ -1,5 +1,7 @@
 package sut.MutationCoverage;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
@@ -21,7 +23,7 @@ public class TSTkeysThatMatchTest {
 
     /**
      * Kills the mutants that changed conditional boundary and
-     * replaces indice subtraction with addition
+     * replaces index subtraction with addition
      */
     @Test
     public void testWithSmallestInput() {
@@ -29,7 +31,7 @@ public class TSTkeysThatMatchTest {
         Integer val = 5;
         trie.put(input + input + input, val - 2);
         trie.put(input + input, val - 1);
-        assertTrue(trie.keysThatMatch(input).spliterator().getExactSizeIfKnown() == 0);
+        assertFalse(trie.keysThatMatch(input).iterator().hasNext());
     }
 
     /**
@@ -41,7 +43,7 @@ public class TSTkeysThatMatchTest {
         Integer val = 5;
         trie.put("bb", val - 1);
         trie.put(input, val);
-        assertTrue(trie.keysThatMatch(input).spliterator().getExactSizeIfKnown() == 1);
+        assertEquals(1, trie.keysThatMatch(input).spliterator().getExactSizeIfKnown());
     }
 
     /**
@@ -55,6 +57,6 @@ public class TSTkeysThatMatchTest {
         trie.put("ca", val - 3);
         trie.put("e", val - 1);
         trie.put(input, val);
-        assertTrue(trie.keysThatMatch(input).spliterator().getExactSizeIfKnown() == 1);
+        assertEquals(1, trie.keysThatMatch(input).spliterator().getExactSizeIfKnown());
     }
 }
